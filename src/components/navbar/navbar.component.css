@@ -1,0 +1,6 @@
+.NavContainer {
+    @apply bg-black w-full h-[4rem] text-white flex px-4 mb-4
+}
+.NavLink {
+    @apply my-auto text-lg mx-4 text-gray-300 hover:text-white cursor-pointer select-none
+}

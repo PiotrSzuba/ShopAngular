@@ -1,0 +1,19 @@
+<div class="flex border w-[70px] min-w-[80px] pl-4 pr-3 select-none">
+  <div class="my-auto text-xl font-normal">
+    <app-editable-number-field [(value)]="value" [defaultValue]="1" />
+  </div>
+  <div class="flex flex-col ml-auto my-auto text-black">
+    <div
+      (click)="changeUp()"
+      class="cursor-pointer mx-auto rotate-180"
+      [style]="{ color: value >= maxValue ? 'gray' : 'black' }">
+      <mat-icon class="scale-[1.25]">keyboard_arrow_down</mat-icon>
+    </div>
+    <div
+      (click)="changeDown()"
+      class="cursor-pointer mx-auto"
+      [style]="{ color: value <= minValue ? 'gray' : 'black' }">
+      <mat-icon class="scale-[1.25]">keyboard_arrow_down</mat-icon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="page">
+  <div *ngIf="items && items.length > 0" class="mainGrid">
+    <div *ngFor="let item of items" class="min-h-[50%] w-full flex">
+      <app-card-item [item]="item" />
+    </div>
+  </div>
+  <div
+    *ngIf="!items.length && !itemsLoading"
+    class="drop-shadow-xl bg-white py-8 flex">
+    <div class="mx-auto font-semibold text-lg">No Items available</div>
+  </div>
+  <div *ngIf="itemsLoading" class="flex mt-[20%]">
+    <div class="h-[5rem] w-[5rem] mx-auto my-auto">
+      <app-spinner-circle />
+    </div>
+  </div>
+</div>

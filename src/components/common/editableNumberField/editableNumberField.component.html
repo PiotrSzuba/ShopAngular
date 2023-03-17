@@ -1,0 +1,10 @@
+<div
+  class="flex transition-colors duration-300 w-full focus-within:border-black cursor-text">
+  <input
+    #input
+    class="w-full"
+    [ngModel]="valueStr"
+    (ngModelChange)="onChange($event)"
+    [readonly]="!editMode"
+    (blur)="onBlur()" />
+</div>

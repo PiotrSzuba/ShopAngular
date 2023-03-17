@@ -1,0 +1,14 @@
+<div class="page">
+  <div class="flex w-full">
+    <app-number-picker [maxValue]="99" [minValue]="1" [value]="1" />
+    <app-editable-text-field
+      [(value)]="value"
+      placeholder="test"
+      [editable]="true"
+      [border]="false"
+      [validate]="validate" />
+  </div>
+  <div class="flex w-full bg-blue-500">
+    <app-editable-text-area [style]="{ width: '100%' }" [(value)]="taValue" />
+  </div>
+</div>

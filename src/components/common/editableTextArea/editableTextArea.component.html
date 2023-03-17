@@ -1,0 +1,15 @@
+<div class="flex w-full bg-red-500">
+  <div class="flex w-full h-fit relative pl-1 pt-1">
+    <textarea
+      #input
+      class="p-1 rounded-lg editableTextArea"
+      [ngModel]="value"
+      (ngModelChange)="onChange($event)"
+      [readOnly]="!editable"
+      [placeholder]="editable ? placeholder : ''"
+      [readonly]="!editable"
+      (keyup.esc)="onConfirm()"
+      (blur)="handleBlur()"></textarea>
+  </div>
+</div>
+{{ value }}
