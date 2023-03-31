@@ -1,8 +1,8 @@
 <div class="flex w-full bg-red-500">
-  <div class="flex w-full h-fit relative pl-1 pt-1">
+  <div class="relative flex h-fit w-full pl-1 pt-1">
     <textarea
       #input
-      class="p-1 rounded-lg editableTextArea"
+      class="editableTextArea rounded-lg p-1"
       [ngModel]="value"
       (ngModelChange)="onChange($event)"
       [readOnly]="!editable"

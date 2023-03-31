@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 @tailwind base;
 @tailwind components;

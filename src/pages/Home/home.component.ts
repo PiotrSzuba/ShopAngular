@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemService } from 'src/services/itemService';
 import { IItem } from 'src/Types';
+import { Store, select } from '@ngrx/store';
+import { ItemStoreState, loadItems } from 'src/stores/ItemStore';
+import {
+  selectItems,
+  selectItemsLoading,
+} from 'src/stores/ItemStore/itemStoreSelectors';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +14,14 @@ import { IItem } from 'src/Types';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private itemService: ItemService) {}
+  constructor(private store: Store<ItemStoreState>) {}
 
-  public items: IItem[] = [];
-  public itemsLoading = true;
+  items$: Observable<IItem[]> = this.store.pipe(select(selectItems));
+  itemsLoading$: Observable<boolean> = this.store.pipe(
+    select(selectItemsLoading)
+  );
 
   ngOnInit(): void {
-    this.getItems();
+    this.store.dispatch(loadItems());
   }
-
-  private getItems = () => {
-    this.itemService.getAllItem().subscribe(res => {
-      this.items = res;
-      this.itemsLoading = false;
-    });
-  };
 }

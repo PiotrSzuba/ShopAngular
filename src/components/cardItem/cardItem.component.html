@@ -1,13 +1,13 @@
 <div
-  class="flex flex-col w-full h-full mb-4 font-semibold select-none"
+  class="mb-4 flex h-full w-full select-none flex-col font-semibold"
   *ngIf="item"
   routerLink="item/{{ item.id }}">
   <div class="flex">
     <img
       src="{{ item.images[0].file }}"
-      class="hover:cursor-pointer mx-auto object-cover h-[35vw] w-[100vw] brightness-90 hover:brightness-100 transition-all" />
+      class="mx-auto h-[35vw] w-[100vw] object-cover brightness-90 transition-all hover:cursor-pointer hover:brightness-100" />
   </div>
-  <div class="text-center mt-4">
+  <div class="mt-4 text-center">
     {{ item.name }}
   </div>
   <div class="flex justify-center">{{ formatDecimal(item.price) }} zł</div>
